@@ -1,7 +1,12 @@
+let bubble = new BubbleSort();
+
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(windowWidth, windowHeight);
+
+  bubble.fillItems(100);
+  bubble.sort();
 }
 
 function draw() {
-  background(220);
+  
 }
