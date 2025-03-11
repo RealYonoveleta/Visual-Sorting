@@ -22,4 +22,9 @@ class Sortable {
         this.delay = delay;
     }
 
+    async showItems(selected, comparing) {
+        this.collection.showItems(selected, comparing);
+        await this.wait();
+    }
+
 }
