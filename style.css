@@ -1,8 +1,68 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
 
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#sketch-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
 canvas {
   display: block;
+}
+
+nav {
+  display: flex;
+  justify-content: start;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.navlink, #navinput-container {
+  height: 100%;
+  padding: 1rem 1.5rem;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: color 0.2s;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navlink:hover {
+  background-color: #333;
+  color: #666;
+}
+
+#navinput-container {
+  margin-left: auto;
+  flex-grow: 1;
+  gap: 10px;
+}
+
+.navinput {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navinput>input {
+  text-align: center;
 }

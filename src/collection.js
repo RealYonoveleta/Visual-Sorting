@@ -67,7 +67,7 @@ class Collection {
         rectMode(CORNERS);
         fill(color);
         let x = i * this.itemWidth;
-        rect(x, windowHeight, x + this.itemWidth, windowHeight - this.calculateItemHeight(this.items[i]));
+        rect(x, canvas.height, x + this.itemWidth, canvas.height - this.calculateItemHeight(this.items[i]));
     }
 
     showItems(selected, comparing) {
@@ -90,11 +90,11 @@ class Collection {
     }
 
     setItemWidth() {
-        this.itemWidth = windowWidth / this.items.length;
+        this.itemWidth = canvas.width / this.items.length;
     }
 
     calculateItemHeight(value) {
-        return (windowHeight / this.items.length) * value;
+        return (canvas.height / this.items.length) * value;
     }
 
     setItemColor(color) {

@@ -1,35 +1,21 @@
-let collection = new Collection();
-let bubble, selection, insertion, quicksort, mergesort;
+let sketchContainer = document.getElementById("sketch-container");
+let canvas;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  canvas = createCanvas(sketchContainer.offsetWidth, sketchContainer.offsetHeight);
+  canvas.parent(sketchContainer);
 
-  collection.fillUnrepeated(200);
-  collection.setColors("#362c2c", "#ff0000", "#a70000");
-
-  // bubble
-  bubble = new BubbleSort(collection);
-  bubble.setDelay(10);
-
-  // selection
-  selection = new SelectionSort(collection);
-  selection.setDelay(10);
-
-  // insertion
-  insertion = new InsertionSort(collection);
-  insertion.setDelay(10);
-
-  // quicksort
-  quicksort = new QuickSort(collection);
-  quicksort.setDelay(10);
-
-  // mergesort  
-  mergesort = new MergeSort(collection);
-  mergesort.setDelay(10);
-
-  mergesort.sort();
+  // Ensure the canvas size matches the container size
+  if(canvas.width !== sketchContainer.offsetWidth || canvas.height !== sketchContainer.offsetHeight) {
+    resizeCanvas(sketchContainer.offsetWidth, sketchContainer.offsetHeight);
+  }
 }
 
 function draw() {
-  
+
 }
+
+// Add an event listener to handle window resize events
+window.addEventListener('resize', () => {
+  resizeCanvas(sketchContainer.offsetWidth, sketchContainer.offsetHeight);
+});

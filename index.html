@@ -1,32 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Sketch</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Visual Sorting Algorithms</title>
 
-    <script src="libraries/p5.min.js"></script>
-    <script src="libraries/p5.sound.min.js"></script>
-  </head>
+  <link rel="stylesheet" type="text/css" href="style.css">
 
-  <body>
-    <!-- Collection -->
-    <script src="src/collection.js"></script>
+  <script src="libraries/p5.min.js"></script>
+  <script src="libraries/p5.sound.min.js"></script>
+</head>
 
-    <!-- Sortable "interface" -->
-    <script src="src/sortable.js"></script>
+<body>
+  <!-- Collection -->
+  <script src="src/collection.js"></script>
 
-    <!-- Sorting algorithms -->
-    <script src="src/bubble.js"></script>
-    <script src="src/selection.js"></script>
-    <script src="src/insertion.js"></script>
-    <script src="src/quicksort.js"></script>
-    <script src="src/mergesort.js"></script>
-  
-    <!-- Sketch -->
-    <script src="sketch.js"></script>
-  </body>
+  <!-- Sortable "interface" -->
+  <script src="src/sortable.js"></script>
+
+  <!-- Sorting algorithms -->
+  <script src="src/bubble.js"></script>
+  <script src="src/selection.js"></script>
+  <script src="src/insertion.js"></script>
+  <script src="src/quicksort.js"></script>
+  <script src="src/mergesort.js"></script>
+
+  <!-- Main js -->
+  <script src="src/main.js"></script>
+
+  <!-- Page -->
+  <nav>
+    <a class="navlink" id="bubblesort" onclick="invokeBubbleSort()">
+      <span class="navlink-text">Bubble sort</span>
+    </a>
+    <a class="navlink" id="selectionsort" onclick="invokeSelectionSort()">
+      <span class="navlink-text">Selection sort</span>
+    </a>
+    <a class="navlink" id="insertionsort" onclick="invokeInsertionSort()">
+      <span class="navlink-text">Insertion sort</span>
+    </a>
+    <a class="navlink" id="quicksort" onclick="invokeQuickSort()">
+      <span class="navlink-text">Quick sort</span>
+    </a>
+    <a class="navlink" id="mergesort" onclick="invokeMergeSort()">
+      <span class="navlink-text">Merge sort</span>
+    </a>
+
+    <div id="navinput-container">
+      <div class="navinput">
+        <span class="navinput-text">Collection size</span>
+        <input type="number" id="collectionsize" value="100">
+      </div>
+      <div class="navinput">
+        <span class="navinput-text">Delay ms</span>
+        <input type="number" id="delay" value="10">
+      </div>
+    </div>
+  </nav> 
+
+  <div id="sketch-container"></div>
+
+  <!-- Sketch -->
+  <script src="sketch.js"></script>
+
+</body>
+
 </html>
