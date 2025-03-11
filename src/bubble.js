@@ -1,27 +1,20 @@
 class BubbleSort extends Sortable {
 
-    constructor() {
-        super();
+    constructor(collection) {
+        super(collection);
     }
 
-    async sort(delay = 10) {
+    async sort() {
  
-        for (var i = 0; i < this.items.length; i++) {
-            for (var j = 0; j < this.items.length - i - 1; j++) {
+        for (var i = 0; i < this.collection.length(); i++) {
+            for (var j = 0; j < this.collection.length() - i - 1; j++) {
 
-                // wait
-                await new Promise((resolve) =>
-                    setTimeout(() => {
-                        resolve();
-                    }, delay)
-                );
+                await this.wait();
 
-                this.showItems(j);
+                this.collection.showItems(j, j + 1);
 
-                if(this.items[j] > this.items[j + 1]) {
-                    let temp = this.items[j];
-                    this.items[j] = this.items[j + 1];
-                    this.items[j + 1] = temp;
+                if(this.collection.get(j) > this.collection.get(j + 1)) {
+                    this.collection.swap(j, j + 1); 
                 }
             }
         }
